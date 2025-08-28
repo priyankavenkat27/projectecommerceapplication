@@ -78,7 +78,7 @@ public class tc_verifyconandsubworking{
         // Print alert text (optional)
         System.out.println("Alert message: " + alert.getText());
 
-        // Accept the alert
+        // Accept the alert window
         alert.accept();
 
 
