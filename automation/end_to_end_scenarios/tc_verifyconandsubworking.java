@@ -21,7 +21,7 @@ public class tc_verifyconandsubworking{
 
     @BeforeMethod
     public void setup() {
-        // Path to your ChromeDriver
+        // ChromeDriver setup
         WebDriverManager.chromedriver().setup();
 
         driver = new ChromeDriver();
