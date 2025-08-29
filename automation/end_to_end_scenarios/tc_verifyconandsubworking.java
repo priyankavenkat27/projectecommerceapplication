@@ -28,7 +28,7 @@ public class tc_verifyconandsubworking{
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-        // Open your site
+        // Open the site
         driver.get("https://automationexercise.com/"); 
     }
 
