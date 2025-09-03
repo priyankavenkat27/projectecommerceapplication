@@ -1,4 +1,4 @@
-# Ecom Project
+# Ecommerce application Project
 
 ## Overview
 This is a *Maven-based E-commerce project*.  
