@@ -8,16 +8,16 @@ The project includes automation scripts, test cases, reports, and screenshots fo
 
 ## Project Structure
 
-EcomProject/
-├── src/                  # Source code
-├── test/                 # Test scripts
-├── test-output/          # Test results
-├── reports/              # Extent reports
-├── screenshots/          # Screenshots of tests
-├── config/               # Configuration files
-├── pom.xml               # Maven build file
-├── .gitignore            # Git ignore file
-└── README.md             # Project documentation
+- EcomProject/
+- ├── src/                  # Source code
+- ├── test/                 # Test scripts
+- ├── test-output/          # Test results
+- ├── reports/              # Extent reports
+- ├── screenshots/          # Screenshots of tests
+- ├── config/               # Configuration files
+- ├── pom.xml               # Maven build file
+- ├── .gitignore            # Git ignore file
+- └── README.md             # Project documentation
 
 
 ## Prerequisites
@@ -46,13 +46,13 @@ EcomProject/
     ```bash
     mvn test
 
-Notes
-	•	Do not delete files from the repository. Only add/update code and test cases.
-	•	Reports and screenshots will be generated automatically in the respective folders.
+## Notes
+- Do not delete files from the repository. Only add/update code and test cases.
+- Reports and screenshots will be generated automatically in the respective folders.
  
-Contributors
-	•	Priyanka (Team Lead)
-	•	Kaviyanjali M
-	•	Keerthana V S
-	•	Asha R
+## Contributors
+-   Priyanka (Team Lead)
+-	Kaviyanjali M
+-	Keerthana V S
+-	Asha R
 
