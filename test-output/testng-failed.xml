@@ -3,14 +3,20 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.ecom.tests.high_priority_testcases">
+      <class name="com.ecom.tests.login_functionality_testcases">
         <methods>
-          <include name="TC005_VerifyCheckoutButton"/>
-          <include name="TC006_VerifyDeleteIcon"/>
+          <include name="Tc_Ecom_Login_07_loginWithInvalidCredentials"/>
+          <include name="Tc_Ecom_Login_11_verifyLogout"/>
+          <include name="Tc_Ecom_Login_09_loginWithInvalidEmail"/>
+          <include name="Tc_Ecom_Login_05_enterValidEmailPassword"/>
+          <include name="Tc_Ecom_Login_07_verifyLoggedInAsUserText"/>
+          <include name="Tc_Ecom_Login_06_loginWithValidCredentials"/>
           <include name="tearDown"/>
+          <include name="Tc_Ecom_Login_14_loginWithBlankFields"/>
           <include name="setup"/>
+          <include name="Tc_Ecom_Login_12_deleteAccountAndVerifyMessage"/>
         </methods>
-      </class> <!-- com.ecom.tests.high_priority_testcases -->
+      </class> <!-- com.ecom.tests.login_functionality_testcases -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

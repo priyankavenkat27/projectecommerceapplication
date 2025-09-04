@@ -16,7 +16,7 @@ public class extentmanager {
             String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
 
             // Create reports folder if not exists
-            String reportPath = projectPath + "\\reports\\TestReport_" + timestamp + ".html";
+            String reportPath = projectPath + "\\reports\\TestReportforlogin_" + timestamp + ".html";
 
             ExtentSparkReporter spark = new ExtentSparkReporter(reportPath);
             extent = new ExtentReports();

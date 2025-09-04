@@ -69,5 +69,12 @@ public class signup_login_page {
         } catch (Exception e) {
             return false;
         }
+        
+    }
+    public WebElement getEmailField() {
+        return driver.findElement(By.xpath("//input[@data-qa='login-email']"));
+    }
+    public WebElement getpasswordField() {
+    		return driver.findElement(By.xpath("//input[@data-qa='login-password']"));
     }
 }

@@ -10,7 +10,9 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -22,6 +24,12 @@ public class Baseclass {
     public static ExtentReports extent;
     public static ExtentTest test;
     public static Properties config;
+
+    // 🔹 Initialize Extent Reports only once before the suite
+    @BeforeSuite
+    public void startReport() {
+        extent = extentmanager.getInstance();
+    }
 
     @BeforeMethod
     public void setup() throws IOException {
@@ -44,27 +52,26 @@ public class Baseclass {
 
         // Always open homepage before every test
         driver.get(config.getProperty("baseUrl"));
-
-        // Setup Extent Reports (singleton)
-        extent = extentmanager.getInstance();
     }
 
     @AfterMethod
-    public void tearDown(ITestResult result) throws IOException {
-        // Capture screenshot if test failed
-        if (result.getStatus() == ITestResult.FAILURE) {
-            String screenshotPath = screenshotutilities.capturescreen(driver, result.getName());
-            test.fail("Test Failed: " + result.getThrowable())
-                .addScreenCaptureFromPath(screenshotPath);
-        } else if (result.getStatus() == ITestResult.SUCCESS) {
-            test.pass("Test Passed ");
-        } else if (result.getStatus() == ITestResult.SKIP) {
-            test.skip("Test Skipped: " + result.getThrowable());
-        }
-
+    public void tearDown(ITestResult result) {
         if (driver != null) {
-            driver.quit();
+            try {
+                if (result.getStatus() == ITestResult.FAILURE) {
+                    screenshotutilities.capturescreen(driver, result.getName());
+                }
+            } catch (Exception e) {
+                System.out.println("Screenshot capture skipped: " + e.getMessage());
+            } finally {
+                driver.quit();
+            }
         }
+    }
+
+    // 🔹 Flush report only once after the suite finishes
+    @AfterSuite
+    public void endReport() {
         if (extent != null) {
             extent.flush();
         }
